@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>JeaProject — Password Generator</title>
+  
+        <meta name="author" content="GilazovDEV" />
+    <meta name="description" content="GilazovDEV— Info" />
+    <meta name="keywords" content="Даня, Гилязов, GilazovDEV, Генератор, Пароль, Рандом, Пароли, Подборка, Генератор паролей, Надежность, Защита, JeaProject, Password, Generator, Security" />
+    <link rel="shortcut icon" href="favicon.ico">
+  
+      <link rel="stylesheet" href="style.css">
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700">
+  
+</head>
+
+<body>
+       
+  <div>
+    
+    <h2>JeaProject - Generator</h2><hr>
+    <div class="tap">Хотите себе индивидуальный и надёжный пароль? То наш сайт тебе в этом поможет!</div><br><hr>
+    
+    <div class="project"><a class="gla" href="index.html">Генератор Ников</a></div>
+    
+  </div>
+
+    <div id="app">
+    <section class="wrapper">   
+      <h1>Генератор Паролей</h1>
+      <div class="password-box">
+        <span id="password" class="password" v-on:click="copyToClipboard">{{ password }}</span>
+        <span class="regenerate-password" v-on:click="generatePassword"></span>
+        <span class="copy-password" v-on:click="copyToClipboard"></span>
+        <span class="tooltip" v-if="copied">Пароль успешно скопирован!</span>
+      </div>
+      <form @keydown.enter.prevent="">
+        <div class="field-wrap">
+          <label>Надежность:</label>
+          <span class="range-value">{{strength.text}}</span>
+          <div class="range-slider_wrapper slider-strength" v-bind:class="strength.text">
+            <span class="slider-bar" v-bind:style="{ width: strength.score + '%' }"></span>
+            <input type="range" class="range-slider" min="0" max="100" v-model="strength.score" disabled>
+          </div>  
+        </div>
+        <div class="seperator"></div>
+        <div class="field-wrap">
+          <label>Длина</label>
+          <span class="range-value">{{settings.length}}</span>
+          <div class="range-slider_wrapper">
+            <span class="slider-bar" v-bind:style="{ width: lengthThumbPosition + '%' }"></span>
+            <input type="range" class="range-slider" min="6" v-bind:max="settings.maxLength" v-model="settings.length">
+          </div>  
+        </div>
+        <div class="field-wrap">  
+          <label>Цифры</label>
+          <span class="range-value">{{settings.digits}}</span>
+          <div class="range-slider_wrapper">
+            <span class="slider-bar"  v-bind:style="{ width: digitsThumbPosition + '%' }"></span>
+            <input type="range" class="range-slider" min="0" v-bind:max="settings.maxDigits" v-model="settings.digits">
+          </div>  
+        </div>
+        <div class="field-wrap">  
+          <label>Символы</label>
+          <span class="range-value">{{settings.symbols}}</span>
+          <div class="range-slider_wrapper">
+            <span class="slider-bar"  v-bind:style="{ width: symbolsThumbPosition + '%' }"></span>
+            <input type="range" class="range-slider" min="0" v-bind:max="settings.maxSymbols" v-model="settings.symbols">
+          </div>  
+        </div>
+      </form>
+    </section>
+  </div>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.3/vue.min.js'></script>
+  
+  <div class="info"><hr>JeaProject — Лучший проект который развивается лишь вверх, в нашей группе вк вы можете подробно узнать о нас ;)<hr></div>
+
+    <p><br>Наша Группа BK:</p>
+<section id="vk" class="service-area section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="section-title white-title text-center">
+                    <br>
+                    <center><script type="text/javascript" src="//vk.com/js/api/openapi.js?137"></script>
+                        <div id="vk_groups"></div>
+                        <script type="text/javascript">
+                            VK.Widgets.Group("vk_groups", {mode: 3, width: "300"}, 189245270 );
+                        </script></center>
+                </section>
+                     <script type="text/javascript" src="//vk.com/js/api/openapi.js?143"></script><br/><br/>
+                     <hr>
+
+        <div class="foters">
+        	<div class="copyright">
+        		<span>&copy; GilazovDEV <a href="vk.com/jeaproject" target="_blink" title="JeaProject">JeaProject.</a></span>
+        	</div>
+        </div>
+
+    <script  src="index.js"></script>
+</body>
+
+</html>
